@@ -1,39 +1,30 @@
-class Node{
-public:
-    string val;
-    Node* next;
-    Node* prev;
-    Node(string val){
-        this->val=val;
-        next=NULL;
-        prev=NULL;
-    }
-};
 class BrowserHistory {
 public:
-    Node* head;
+    stack<string> st;
+    stack<string> s;
     BrowserHistory(string homepage) {
-        head =new Node(homepage);
+        st.push(homepage);
     }
     
     void visit(string url) {
-        head->next=new Node(url);
-        head->next->prev=head;
-        head=head->next;
+        st.push(url);
+        s=stack<string>();
     }
     
     string back(int steps) {
-        while(head->prev && steps--){
-            head=head->prev;
+        while(st.size()>1 && steps--){
+            s.push(st.top());
+            st.pop();
         }
-        return head->val;
+        return st.top();
     }
     
     string forward(int steps) {
-        while(head->next && steps--){
-            head=head->next;
+        while(s.size()>0 && steps--){
+            st.push(s.top());
+            s.pop();
         }
-        return head->val;
+        return st.top();
     }
 };
 
