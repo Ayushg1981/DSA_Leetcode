@@ -1,1 +1,9 @@
-select e.name from employee e where (select count(managerId) from employee where e.id=managerId)>=5
+SELECT name
+FROM Employee
+WHERE Id IN (
+SELECT managerId
+FROM Employee
+WHERE managerId IS NOT NULL
+GROUP BY managerId
+HAVING COUNT(*) >= 5
+);
