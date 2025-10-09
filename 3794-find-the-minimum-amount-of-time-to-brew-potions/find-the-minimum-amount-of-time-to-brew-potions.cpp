@@ -19,7 +19,7 @@ public:
             for(int j=0;j<=n;j++){
                 a[j]+=y;
             }
-            ans=a;
+            swap(ans,a);
         }
         return ans[n];
     }
