@@ -14,6 +14,5 @@ public:
             }
         }
         return m*value+a;
-
     }
 };
