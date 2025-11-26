@@ -15,12 +15,9 @@ public:
     }
     vector<vector<int>> findSubsequences(vector<int>& nums) {
         set<vector<int>> st;
-        vector<vector<int>> ans;
         vector<int> a;
         f(st,nums,a,0);
-        for(auto x:st){
-            ans.push_back(x);
-        }
+        vector<vector<int>> ans(st.begin(),st.end());
         return ans;
     }
 };
