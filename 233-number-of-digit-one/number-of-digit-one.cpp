@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[40][2][40];
+    int dp[11][2][11];
     int f(int i,bool flag,int cnt,string& s){
         if(i==s.size()) return cnt;
         if(dp[i][flag][cnt]!=-1) return dp[i][flag][cnt];
