@@ -8,12 +8,6 @@ public:
         }
         string ans="";
         for(int i=0;i<s.size();i++){
-            if(a && b){
-                ans+='1';
-                if(s[i]=='0') b--;
-                else a--;
-            }
-            else{
                 if(s[i]=='0' && b){
                     b--;
                     ans+='1';
@@ -28,7 +22,6 @@ public:
                 else{
                     ans+='0';
                 }
-            }
         }
         return ans;
     }
