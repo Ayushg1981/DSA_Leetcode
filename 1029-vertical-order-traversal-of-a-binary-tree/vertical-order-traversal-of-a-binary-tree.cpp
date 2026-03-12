@@ -1,20 +1,9 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
 class Solution {
 public:
-    map<int,map<int,map<int,int>>> mp;
+    map<int,map<int,multiset<int>>> mp;
     void f(int i,int j,TreeNode* root){
         if(root==NULL) return;
-        mp[i][j][root->val]++;
+        mp[i][j].insert(root->val);
         f(i-1,j+1,root->left);
         f(i+1,j+1,root->right);
     }
@@ -25,7 +14,7 @@ public:
             vector<int> a;
             for(auto y:x.second){
                 for(auto z:y.second){
-                    while(z.second--) a.push_back(z.first);
+                    a.push_back(z);
                 }
             }
             ans.push_back(a);
