@@ -7,12 +7,7 @@ public:
         v.resize(n+1,vector<int>(m+1,0));
         for(int i=1;i<=n;i++){
             for(int j=1;j<=m;j++){
-                v[i][j]=v[i][j-1]+matrix[i-1][j-1];
-            }
-        }
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<=m;j++){
-                v[i][j]+=v[i-1][j];
+                v[i][j]=(v[i-1][j]+v[i][j-1]-v[i-1][j-1]) + matrix[i-1][j-1];
             }
         }
     }
