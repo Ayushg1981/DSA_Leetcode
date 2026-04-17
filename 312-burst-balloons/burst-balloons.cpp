@@ -5,10 +5,7 @@ public:
         if(dp[i][j] != -1) return dp[i][j] ;
         int ans = INT_MIN ;
         for(int k = i ; k<=j ; k++) {
-            int x=arr[k];
-            if(j+1<arr.size()) x*=arr[j+1];
-            if(i-1>=0) x*=arr[i-1];
-            ans = max(ans,f(i,k-1,arr,dp)+f(k+1,j,arr,dp)+x);
+            ans = max(ans,f(i,k-1,arr,dp)+f(k+1,j,arr,dp)+arr[k]*arr[j+1]*arr[i-1]);
         }
         return dp[i][j] = ans ;
     }
