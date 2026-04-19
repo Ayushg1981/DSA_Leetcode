@@ -9,7 +9,7 @@ public:
         for(int j=0;j<=ub;j++){
             int nl = l;
             if(idx[i]){
-                if(l!=10 && j<l) continue;
+                if( j<l) continue;
                 nl=j;
             }
             x+=f(i+1,flag && j==ub,nl,s,idx);
@@ -34,9 +34,9 @@ public:
         while(sr.size()<16){
             sr='0'+sr;
         }
-        long long a=f(0,true,10,sr,idx);
+        long long a=f(0,true,0,sr,idx);
         memset(dp,-1,sizeof dp);
-        long long b=f(0,true,10,sl,idx);
+        long long b=f(0,true,0,sl,idx);
         return a-b;
     }
 };
