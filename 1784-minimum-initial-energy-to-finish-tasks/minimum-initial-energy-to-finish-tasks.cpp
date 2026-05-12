@@ -2,7 +2,6 @@ class Solution {
 public:
     static bool f(vector<int>& a,vector<int>& b){
         if(a[2]>b[2]) return true;
-        if(a[2]==b[2]) return a[1]<b[1];
         return false;
     }
     int minimumEffort(vector<vector<int>>& tasks) {
