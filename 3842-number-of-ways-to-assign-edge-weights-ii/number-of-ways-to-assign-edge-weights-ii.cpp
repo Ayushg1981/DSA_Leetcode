@@ -62,7 +62,7 @@ public:
                 if(par[a][i]==par[b][i]) continue;
                 a=par[a][i];
                 b=par[b][i];
-                dis+=2*pow(2,i);
+                dis += 2 * (1 << i);
             }
             if(a!=b) dis+=2;
             answer[i]=ans[dis];
