@@ -4,7 +4,7 @@ public:
         int n=nums.size();
         int ans=INT_MIN;
 
-        if(k==0 || n==1){
+        if(k==0){
             int x=0;
             for(int i=0;i<nums.size();i++){
                 x+=nums[i];
