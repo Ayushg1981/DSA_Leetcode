@@ -21,7 +21,7 @@ public:
                 node=par[node][i];
             }
             if(node==-1) return -1;
-            k=k>>1;
+            k = k>>1;
         }
         return node;
     }
