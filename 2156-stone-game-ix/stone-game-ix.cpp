@@ -3,10 +3,6 @@ public:
     bool stoneGameIX(vector<int>& stones) {
         int n=stones.size();
         if(n==1) return false;
-        if(n==2){
-            if((stones[0]==1 && stones[1]==2) || (stones[0]==2 && stones[1]==1)) return true;
-            else return false;
-        }
         int a=0,b=0,c=0;
         for(int i=0;i<n;i++){
             if(stones[i]%3==0) a++;
