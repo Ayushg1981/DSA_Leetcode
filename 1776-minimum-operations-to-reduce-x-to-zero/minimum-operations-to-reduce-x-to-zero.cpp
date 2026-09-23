@@ -1,13 +1,11 @@
 class Solution {
 public:
-    int minOperations(vector<int>& nums, int x) {
-        int n=nums.size();
-        vector<int> v(n);
+    int minOperations(vector<int>& v, int x) {
+        int n=v.size();
         unordered_map<int,int> mp;
-        v[0]=nums[0];
         mp[v[0]]=0;
         for(int i=1;i<n;i++){
-            v[i]=v[i-1]+nums[i];
+            v[i]+=v[i-1];
             mp[v[i]]=i;
         }
         int sum=v[n-1];
